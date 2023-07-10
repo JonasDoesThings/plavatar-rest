@@ -2,11 +2,9 @@ module github.com/jonasdoesthings/plavatar-rest
 
 go 1.20
 
-replace github.com/jonasdoesthings/plavatar => ./../plavatar
-
 require (
 	github.com/ajstarks/svgo v0.0.0-20211024235047-1546f124cd8b
-	github.com/jonasdoesthings/plavatar v0.0.0-00010101000000-000000000000
+	github.com/jonasdoesthings/plavatar v0.0.0-20230710194021-5f387fb428c3
 	github.com/labstack/echo-contrib v0.15.0
 	github.com/labstack/echo/v4 v4.10.2
 	github.com/patrickmn/go-cache v2.1.0+incompatible
