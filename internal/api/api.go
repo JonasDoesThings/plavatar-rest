@@ -3,9 +3,9 @@ package api
 import (
 	"bufio"
 	"flag"
-	"github.com/jonasdoesthings/plavatar"
 	"github.com/jonasdoesthings/plavatar-rest/internal/caching"
 	"github.com/jonasdoesthings/plavatar-rest/internal/utils"
+	"github.com/jonasdoesthings/plavatar/v3"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/patrickmn/go-cache"

@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/ajstarks/svgo v0.0.0-20211024235047-1546f124cd8b
-	github.com/jonasdoesthings/plavatar v0.0.0-20230710194021-5f387fb428c3
+	github.com/jonasdoesthings/plavatar/v3 v3.0.1
 	github.com/labstack/echo-contrib v0.15.0
 	github.com/labstack/echo/v4 v4.10.2
 	github.com/patrickmn/go-cache v2.1.0+incompatible

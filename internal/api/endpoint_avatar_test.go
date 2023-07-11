@@ -3,8 +3,8 @@ package api
 import (
 	"crypto/sha256"
 	"fmt"
-	"github.com/jonasdoesthings/plavatar"
 	"github.com/jonasdoesthings/plavatar-rest/internal/utils"
+	"github.com/jonasdoesthings/plavatar/v3"
 	"github.com/labstack/echo/v4"
 	"github.com/stretchr/testify/assert"
 	"net/http"

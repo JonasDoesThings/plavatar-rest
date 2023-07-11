@@ -2,7 +2,7 @@ package api
 
 import (
 	svg "github.com/ajstarks/svgo"
-	"github.com/jonasdoesthings/plavatar"
+	"github.com/jonasdoesthings/plavatar/v3"
 	"github.com/labstack/echo/v4"
 	"math/rand"
 	"net/http"
