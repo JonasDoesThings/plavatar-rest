@@ -1,8 +1,6 @@
 # plavatar-rest
 A stateless REST microservice wrapping [plavatar](https://github.com/JonasDoesThings/plavatar) for you (docker image available).
 
-`plavatar`: A library for generating **pla**ceholder **avatar**s (=plavatars).  
-
 **If you are looking for the local golang plavatar library instead** of this webservice wrapper, [jump to the main plavatar library repo here](https://github.com/jonasDoesThings/plavatar).
 
 ![docs/assets/readme-demo.png](docs/assets/readme-demo.png)
