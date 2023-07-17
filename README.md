@@ -81,6 +81,17 @@ a config in the `config/` folder, nor you supply a path with `--config` the defa
 }
 ```
 
+## Developing
+If you want to use a local version of the plavatar library, you can add a [replace directive](https://go.dev/ref/mod#go-mod-file-replace) to the plavatar-rest go.mod file.
+e.g.
+```
+replace (
+    github.com/jonasdoesthings/plavatar/v3 => ../plavatar/
+)
+```
+This assumes that you have plavatar and plavata-rest both cloned locally next to each other.
+
+
 ## Testing
 To run the go tests, use `go test -v ./...` in the root directory of the project.
 
