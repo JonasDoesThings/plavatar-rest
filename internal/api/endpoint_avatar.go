@@ -12,16 +12,16 @@ import (
 
 func (server *Server) HandleGetAvatar(generatorFunc func(canvas *svg.SVG, rng *rand.Rand, rngSeed int64, options *plavatar.Options)) echo.HandlerFunc {
 	return func(context echo.Context) error {
-		outputSize, err := strconv.Atoi(context.Param("size"))
-		if err != nil || outputSize < minSize || outputSize > maxSize {
-			return context.Blob(http.StatusBadRequest, "application/json", []byte(`{"error": "invalid size"}`))
-		}
-
 		outputFormat := plavatar.FormatPNG
 		mimeType := "image/png"
 		if strings.ToLower(context.QueryParam("format")) == "svg" {
 			outputFormat = plavatar.FormatSVG
 			mimeType = "image/svg+xml"
+		}
+
+		outputSize, err := strconv.Atoi(context.Param("size"))
+		if outputFormat != plavatar.FormatSVG && (err != nil || outputSize < minSize || outputSize > maxSize) {
+			return context.Blob(http.StatusBadRequest, "application/json", []byte(`{"error": "invalid size"}`))
 		}
 
 		outputShape := plavatar.ShapeCircle
