@@ -12,7 +12,6 @@ import (
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"os"
-	"strconv"
 )
 
 type Server struct {
@@ -98,17 +97,4 @@ func StartServer() {
 	}
 
 	select {}
-}
-
-func (server *Server) getSizeFromRequest(context echo.Context) int {
-	size, err := strconv.Atoi(context.Param("size"))
-	if err != nil {
-		return -1
-	}
-
-	if size < minSize || size > maxSize {
-		return -1
-	}
-
-	return size
 }
