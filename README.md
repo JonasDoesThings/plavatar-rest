@@ -99,3 +99,9 @@ To generate a self-signed certificate for testing purposes you can
 use `openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out testing.crt -keyout testing.key`
 
 For benchmarking, you can use the provided [k6 script](https://github.com/grafana/k6) under `scripts/k6_plavatar_benchmark.js`.
+
+## Releasing
+1. Merge all changes into the next branch to test them out (commits to the next branch will trigger the build-and-release-nightly action that builds and publishes the docker image with tag "next").
+2. Rebase next into main.
+3. Create a tag following SemVer syntax prefixed with a `v` (e.g. `v3.4.2`).
+4. Push the tag, and it will trigger the build_and_release action which will automatically publish the tagged docker image.
