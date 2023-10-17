@@ -9,6 +9,11 @@ import (
 	"strings"
 )
 
+type cacheEntry struct {
+	body     []byte
+	mimeType string
+}
+
 type bodyDumpResponseWriter struct {
 	io.Writer
 	http.ResponseWriter
@@ -33,8 +38,7 @@ func CacheMiddleware(avatarCache *cache.Cache) echo.MiddlewareFunc {
 		return func(context echo.Context) error {
 			if cachedAvatar, found := avatarCache.Get(context.Request().RequestURI); found {
 				context.Response().Header().Add("Cache-Status", "HIT")
-				_, err := context.Response().Write(cachedAvatar.([]byte))
-				return err
+				return context.Blob(http.StatusOK, cachedAvatar.(cacheEntry).mimeType, cachedAvatar.(cacheEntry).body)
 			}
 
 			resBody := new(bytes.Buffer)
@@ -50,7 +54,10 @@ func CacheMiddleware(avatarCache *cache.Cache) echo.MiddlewareFunc {
 			// Check if the response is valid, AND if the response has a provided seed (:name). Don't cache random generated ones
 			contentType := context.Response().Header().Get("Content-Type")
 			if writer.statusCode == http.StatusOK && (contentType == "image/png" || contentType == "image/svg+xml") && strings.Contains(context.Path(), ":name") {
-				avatarCache.SetDefault(context.Request().RequestURI, resBody.Bytes())
+				avatarCache.SetDefault(context.Request().RequestURI, cacheEntry{
+					body:     resBody.Bytes(),
+					mimeType: contentType,
+				})
 			}
 
 			return nil
