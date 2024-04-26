@@ -153,6 +153,8 @@ github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:
 github.com/jonasdoesthings/plavatar/v3 v3.0.2/go.mod h1:H4OUuu4kzmH0sYPXtZ6LZTfN6Y5BOMlXm58qYkeJp7M=
 github.com/jonasdoesthings/plavatar/v3 v3.0.3 h1:+j8pFdFKr25C8PyJNd7AFF0U1UvzkYUaNS4OPs0drKs=
 github.com/jonasdoesthings/plavatar/v3 v3.0.3/go.mod h1:HQOoSRostUnCtOX09RGzQYbtn9Dv8LdTUgvNH11hOgw=
+github.com/jonasdoesthings/plavatar/v3 v3.0.4 h1:rFevAZnfTej/Swssj1rV3stbbzAvXQUXbcmqS6W7tOU=
+github.com/jonasdoesthings/plavatar/v3 v3.0.4/go.mod h1:b06d7RCUW82fYgxwOqXLqbjudvgbjDDseeXYyS4CYTs=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=
 github.com/jstemmer/go-junit-report v0.9.1/go.mod h1:Brl9GWCQeLvo8nXZwPNNblvFj/XSXhF0NWZEnDohbsk=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
